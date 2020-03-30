@@ -27,5 +27,9 @@ public class SccController {
         sccService.uploadZip(file);
     }
 
-
+    @GetMapping("test")
+    public void test(){
+        System.out.println(111);
+        sccService.test();
+    }
 }

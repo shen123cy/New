@@ -6,4 +6,7 @@ public interface SccService {
     void uploadZip(MultipartFile multipartFile);
 
     void ttt(MultipartFile multipartFile);
+
+    void test();
+
 }

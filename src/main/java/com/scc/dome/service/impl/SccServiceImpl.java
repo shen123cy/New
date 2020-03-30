@@ -1,11 +1,13 @@
 package com.scc.dome.service.impl;
 
+import com.scc.dome.dao.SccDao;
 import com.scc.dome.service.SccService;
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -13,12 +15,15 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Enumeration;
+import java.util.Map;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 @Service
 public class SccServiceImpl implements SccService {
 
+    @Autowired
+    private SccDao sccDao;
 
     @Override
     public void uploadZip(MultipartFile multipartFile) {
@@ -73,6 +78,12 @@ public class SccServiceImpl implements SccService {
                 }
             }
         }
+    }
+
+    @Override
+    public void test() {
+        Map test = sccDao.test();
+        System.out.println(test);
     }
 
     private void readExcel(InputStream inputStream) {
