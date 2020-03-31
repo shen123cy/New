@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
 <mapper namespace="com.scc.dome.dao.SccDao">
-    <select id="test" resultType="map">
-      select NOW() from orders limit 1
+    <select id="test" resultType="java.lang.Boolean">
+      select is_del from person2 where last_name = 'c'
     </select>
 </mapper>

@@ -15,7 +15,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Enumeration;
-import java.util.Map;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
@@ -82,7 +81,7 @@ public class SccServiceImpl implements SccService {
 
     @Override
     public void test() {
-        Map test = sccDao.test();
+        Boolean test = sccDao.test();
         System.out.println(test);
     }
 
